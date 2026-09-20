@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matteo's Site</title>
+        <script src="https://kit.fontawesome.com/885a98fbc7.js" crossorigin="anonymous"></script>
+        <style>
+            html {
+                cursor: url('assets/cursor.png'), default;
+            }
+
+            body {
+                background-color: #000;
+            }
+
+            a, button {
+                cursor: url('assets/hover.png'), pointer;
+            }
+
+            .main-container {
+                box-sizing: border-box;
+                padding: 0.8em;
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                align-items: start;
+                gap: 0.5em;
+                width: 95%;
+                margin: auto;
+            }
+
+            .items{
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "title title" 
+                    "tools about"
+                    "club club";
+                justify-content: center;
+                align-content: center;
+                width: 100%;
+                margin: 0 auto;
+                font-weight: 600;
+                color: #000;
+                text-align: center;
+                border-radius: 15px;
+                font-size: 1.5em;
+                border: dashed 2px #fff;
+                padding: 0.3em;
+                gap: 0.3em;
+            }
+
+            .widgets {
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 100%;
+                align-items: center;
+                width: 100%;
+                margin: 0 auto;
+                font-weight: 600;
+                color: #000;
+                text-align: center;
+                border-radius: 15px;
+                font-size: 1.5em;
+                border: dashed 2px #fff;
+                padding: 0.3em;
+                gap: 0.3em;
+            }
+            
+            .github {
+                font-family: 'Space Grotesk', monospace;
+                display: flex;
+                flex-direction: row;
+                background-color: #fff;
+                color: #000 ;
+                text-align: center;
+                border-radius: 8px;
+                border: 2px solid #fff;
+                font-size: 1.5em;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                justify-items: center;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                gap: 0.2em;
+                text-decoration: none;
+            }
+
+            .github:hover {
+                background-color: #000;
+                color: #fff;
+                border: 2px solid #fff;
+            }
+
+            .discord {
+                font-family: 'Space Grotesk', monospace;
+                display: flex;
+                flex-direction: row;
+                background-color: #7289da;
+                color: #fff ;
+                text-align: center;
+                border-radius: 8px;
+                border: 2px solid #7289da;
+                font-size: 1.5em;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                justify-items: center;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                gap: 0.2em;
+                text-decoration: none;
+            }
+
+            .discord:hover {
+                background-color: #000;
+                color: #7289da;
+                border: 2px solid #7289da;
+            }
+
+            .coding {
+                font-family: 'Space Grotesk', monospace;
+                display: flex;
+                flex-direction: row;
+                background-color: #65ff54;
+                color: #000;
+                text-align: center;
+                border-radius: 8px;
+                border: 2px solid #65ff54;
+                font-size: 1.5em;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                justify-items: center;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                gap: 0.2em;
+                text-decoration: none;
+            }
+            
+            .tools {
+                font-family: 'Space Grotesk', monospace;
+                background-color: #9cccff;
+                color: #000;
+                text-align: center;
+                text-justify: left;
+                border-radius: 8px;
+                border: 2px solid #9cccff;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                text-decoration: none;
+                grid-area: tools;
+            }
+
+            .tools:hover {
+                background-color: #000;
+                color: #9cccff;
+                border: 2px solid #9cccff;
+            }
+
+            .about {
+                font-family: 'Space Grotesk', monospace;
+                background-color: #a633d6;
+                color: #fff;
+                text-align: center;
+                text-justify: left;
+                border-radius: 8px;
+                border: 2px solid #a633d6;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                text-decoration: none;
+                grid-area: about;
+            }
+
+            .about:hover {
+                background-color: #000;
+                color: #a633d6;
+                border: 2px solid #a633d6;
+            }
+
+            .club {
+                font-family: 'Space Grotesk', monospace;
+                background-color: #ec3750;
+                color: #fff;
+                text-align: center;
+                text-justify: left;
+                border-radius: 8px;
+                border: 2px solid #ec3750;
+                padding: 0.3em;
+                transition-duration: 0.3s;
+                text-decoration: none;
+                grid-area: club;
+            }
+
+            .club:hover {
+                background-color: #000;
+                color: #ec3750;
+                border: 2px solid #ec3750;
+            }
+
+            h1 {
+                text-align: center;
+                font-family: 'Climate Crisis', sans-serif;
+                color: #fff;
+                font-size: 7vw;
+                letter-spacing: 0.05em;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
+
+            p {
+                text-align: center;
+                font-family: 'Space Grotesk', monospace;
+                font-size: 2vw;
+                letter-spacing: 0.01em;
+                line-height: 1.2;
+                margin: 0;
+                padding: 0;
+            }
+
+            @media (max-width: 720px) {
+                h1 {
+                    font-size: 12vw;
+                }
+
+                .widgets p {
+                    display: none;
+                }
+
+                .widgets {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    width: 100%;
+                }
+
+                .widgets i{
+                    font-size: 10vw;
+                }
+
+                .items p {
+                    font-size: 4vw;
+                }
+
+                .items {
+                    grid-template-areas:
+                        "title"
+                        "tools"
+                        "about"
+                        "club";
+                    align-items: center;
+                    justify-content: center;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto auto;
+                    width: 100%;
+                }
+
+                .main-container {
+                    grid-template-columns: 100%;
+                    grid-template-rows: 1fr 3fr;
+                    justify-content: center;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>MATTEO'S SITE</h1>
+        <div class="main-container">
+            <div class="widgets">
+                <p style="color: #fff;">stuff</p>
+                <a href="https://github.com/gtx-lover-69" class="github">
+                    <i class="fa-brands fa-github"></i>
+                    <p>my github</p>
+                </a>
+                <a href="https://discordapp.com/users/1306328691659509851" class="discord">
+                    <i class="fa-brands fa-discord"></i>
+                    <p>add me on<br>discord</p>
+                </a>
+                <div class="coding">
+                    <i class="fa-solid fa-code"></i>
+                    <p id="coding-time">coding for a long time...</p>
+                </div>
+            </div>
+            <div class="items">
+                <p style="color: #fff; grid-area: title;">more stuff</p>
+                <a href="/tools" class="tools">
+                    <p>/tools</p>
+                </a>
+                <a href="/aboutme" class="about">
+                    <p>/aboutme</p>
+                </a>
+                <a href="/hackclub" class="club">
+                    <p>/hackclub</p>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            async function loadCodingTime() {
+                const el = document.getElementById("coding-time");
+                try {
+                    const res = await fetch("https://hackatime.hackclub.com/api/v1/users/matteoduda/stats");
+                    const json = await res.json();
+                    const seconds = json.total_seconds ?? json.data?.total_seconds;
+                    const hours = Math.floor(seconds / 3600);
+                    const mins = Math.floor((seconds % 3600) / 60);
+                    el.innerHTML = `${hours}h ${mins}m<br>coded`;
+                } catch (err) {
+                    console.error("Hackatime fetch failed:", err);
+                    el.textContent = "coding for a long time...";
+                }
+            }
+            loadCodingTime();
+        </script>
+    </body>
+</html>
