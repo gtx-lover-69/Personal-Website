@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">        
-                <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Matteo's Site</title>
-        <script src="https://kit.fontawesome.com/885a98fbc7.js" crossorigin="anonymous"></script>
         <title>About Me | Matteo's Site</title>
         <style>
             html {
@@ -25,7 +23,7 @@
                 cursor: url('assets/hover.png'), pointer;
             }
 
-                h1 {
+            h1 {
                 text-align: center;
                 font-family: 'Climate Crisis', sans-serif;
                 color: #fff;
@@ -36,7 +34,7 @@
                 padding: 0;
             }
 
-            a {
+            .container a {
                 text-decoration: none;
                 color: #fff;
                 font-weight: bold;
@@ -57,13 +55,46 @@
                 padding: 1vw;
             }
 
+            .main-container {
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 1em;
+                padding: 2vw;
+            }
+
             .container {
                 box-sizing: border-box;
                 align-items: center;
+                justify-items: center;
                 gap: 1em;
-                padding: 2vw;
+                padding: 0.3em;
                 border-radius: 15px;
                 border: dashed 2px #fff;
+                margin: auto auto;
+            }
+
+            .container .home {
+                box-sizing: border-box;
+                display: block;
+                font-family: 'Space Grotesk', monospace;
+                background-color: #aaffff;
+                color: #000;
+                text-align: center;
+                border-radius: 8px;
+                border: 2px solid #aaffff;
+                padding: 0.3em;
+                margin: auto auto;
+                transition-duration: 0.3s;
+                text-decoration: none;
+                width: 100%;
+            }
+
+            .container .home:hover {
+                background-color: #000;
+                color: #aaffff;
+                border: 2px solid #aaffff;
             }
 
             @media (max-width: 720px) {
@@ -80,11 +111,18 @@
     </head>
     <body>
         <h1>ABOUT ME</h1>
-        <p>Hey there, I'm <b>Matteo!</b></p>
-        <div class="container">
-            <p>I started coding back in 2020, when I started making games on <a href="https://scratch.mit.edu/">Scratch</a></p>
-            <p>Upon seeing the game engine do what I want, I realised that being a maker was the true path for me.</p>
-            <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="kavallieri.github.io/the-website">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
-        </div>    
+        <div class="main-container">
+            <p>Hey there, I'm <b>Matteo!</b></p>
+            <div class="container">
+                <p>I started coding back in 2020, when I started making games on <a href="https://scratch.mit.edu/">Scratch</a></p>
+                <p>Upon seeing the game engine do what I want, I realised that being a maker was the true path for me.</p>
+                <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="https://kavallieri.github.io/the-website">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
+            </div>
+            <div class="container">
+                <a href="/index.html" class="home">
+                    <p>/home</p>
+                </a>
+            </div>
+        </div>
     </body>
 </html>
