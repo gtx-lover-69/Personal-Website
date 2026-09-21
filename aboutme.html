@@ -25,7 +25,7 @@
                 cursor: url('assets/hover.png'), pointer;
             }
 
-            h1 {
+                h1 {
                 text-align: center;
                 font-family: 'Climate Crisis', sans-serif;
                 color: #fff;
@@ -36,6 +36,17 @@
                 padding: 0;
             }
 
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                transition-duration: 0.3s;
+            }
+
+            a:hover {
+                text-shadow: 0px 0px 12px #ffffffaf;
+            }
+
             p {
                 text-align: center;
                 font-family: 'Space Grotesk', monospace;
@@ -43,12 +54,37 @@
                 letter-spacing: 0.01em;
                 line-height: 1.2;
                 margin: 0;
-                padding: 0;
+                padding: 1vw;
+            }
+
+            .container {
+                box-sizing: border-box;
+                align-items: center;
+                gap: 1em;
+                padding: 2vw;
+                border-radius: 15px;
+                border: dashed 2px #fff;
+            }
+
+            @media (max-width: 720px) {
+                h1 {
+                    font-size: 12vw;
+                }
+
+                p {
+                    font-size: 5vw;
+
+                }
             }
         </style>    
     </head>
     <body>
-        <h1>About Me</h1>
-        <p>Hello, I'm <b>Matteo!</b></p>
+        <h1>ABOUT ME</h1>
+        <p>Hey there, I'm <b>Matteo!</b></p>
+        <div class="container">
+            <p>I started coding back in 2020, when I started making games on <a href="https://scratch.mit.edu/">Scratch</a></p>
+            <p>Upon seeing the game engine do what I want, I realised that being a maker was the true path for me.</p>
+            <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="kavallieri.github.io/the-website">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
+        </div>    
     </body>
 </html>
