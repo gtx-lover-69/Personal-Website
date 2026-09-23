@@ -84,6 +84,8 @@
             }
 
             .widgets {
+                animation: fade-up 0.6s;
+                animation-delay: 0.2s;
                 background-color: #000;
                 box-sizing: border-box;
                 display: grid;
@@ -102,7 +104,6 @@
             }
             
             .github {
-                animation: fade-up 0.6s;
                 font-family: 'Space Grotesk', monospace;
                 display: flex;
                 flex-direction: row;
@@ -129,8 +130,6 @@
             }
 
             .discord {
-                animation: fade-up 0.6s;
-                animation-delay: 0.2s;
                 font-family: 'Space Grotesk', monospace;
                 display: flex;
                 flex-direction: row;
@@ -157,8 +156,6 @@
             }
 
             .coding {
-                animation: fade-up 0.6s;
-                animation-delay: 0.4s;
                 font-family: 'Space Grotesk', monospace;
                 display: flex;
                 flex-direction: row;
@@ -337,6 +334,7 @@
                 }
 
                 .items {
+                    animation-delay: 0.3s;
                     grid-template-areas:
                         "title"
                         "tools"
@@ -405,10 +403,10 @@
                     const seconds = json.total_seconds ?? json.data?.total_seconds;
                     const hours = Math.floor(seconds / 3600);
                     const mins = Math.floor((seconds % 3600) / 60);
-                    el.innerHTML = `${hours}h ${mins}m`;
+                    el.innerHTML = `coding for <br>${hours}h ${mins}m`;
                 } catch (err) {
                     console.error("Hackatime fetch failed:", err);
-                    el.textContent = "coding for a long time...";
+                    el.textContent = "coding for all eternity";
                 }
             }
             loadCodingTime();
