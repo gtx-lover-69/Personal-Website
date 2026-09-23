@@ -44,36 +44,16 @@
 
             a {
                 text-decoration: none;
-                color: #fff;
-                font-weight: bold;
-                transition-duration: 0.3s;
-                position: relative;
+                color: inherit;
             }
 
-            a:not(.home)::after {
-                content: '';
-                background: #aa55ff;
-                height: 0.4vw;
-                width: 0px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                transition-duration: 0.2s;
-                box-shadow: 0px 0px 16px #aa55ff;
-            }
-
-            a:hover::after {
-                width: 100%;
-            }
-
-            p {
+            p, a {
                 text-align: center;
                 font-family: 'Space Grotesk', monospace;
                 font-size: 2vw;
                 letter-spacing: 0.01em;
                 line-height: 1.2;
                 margin: 0;
-                padding: 1vw;
             }
 
             .main-container {
@@ -81,8 +61,8 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto auto;
-                gap: 1em;
-                padding: 2vw;
+                gap: 0.5em;
+                padding: 0.8vw;
             }
 
             .container {
@@ -92,31 +72,44 @@
                 justify-items: center;
                 gap: 1em;
                 padding: 0.3em;
+                width: 95%;
                 border-radius: 15px;
                 border: dashed 2px #fff;
                 margin: auto auto;
             }
 
-            .container .home {
-                box-sizing: border-box;
-                display: block;
-                font-family: 'Space Grotesk', monospace;
-                background-color: #aaffff;
-                color: #000;
-                text-align: center;
-                border-radius: 8px;
-                border: 2px solid #aaffff;
-                padding: 0.3em;
-                margin: auto auto;
-                transition-duration: 0.3s;
-                text-decoration: none;
-                width: 100%;
+            .container p, a {
+                padding-top: 0.4em;
+                padding-bottom: 0.4em;
             }
 
-            .container .home:hover {
-                background-color: #000;
-                color: #aaffff;
-                border: 2px solid #aaffff;
+            .main-container p {
+                padding-bottom: 0.4em;
+            }
+
+            .container a {
+                padding: 0;
+            }
+
+            .nav {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 0.8em;
+                gap: 0.5em;
+                align-items: center;
+                backdrop-filter: blur(15px);
+                background-color: #00000002;
+                display: flex;
+            }
+            
+            .nav p, a {
+                transition-duration: 0.3s;
+                font-weight: bold;
+                margin: auto auto;
+            }
+            
+            a:hover {
+                text-shadow: 0px 0px 8px white;
             }
 
             @media (max-width: 720px) {
@@ -124,30 +117,28 @@
                     background-size: 2em 2em;
                 }
 
-                p {
+                p, a {
                     font-size: 5vw;
 
                 }
 
-                a::after {
-                    display: none;
-                }
             }
         </style>    
     </head>
     <body>
         <h1>ABOUT ME</h1>
+        <div class="nav">
+            <a href="https://gtx-lover-69.github.io/Personal-Website">/home</a>
+            <a href="tools.html">/tools</a>
+            <p style="color: #aa55ff;">/aboutme</p>
+            <a href="hackclub.html">/hackclub</a>
+        </div>
         <div class="main-container">
             <p>Hey there, I'm <b>Matteo!</b></p>
             <div class="container">
                 <p>I started coding back in 2020, when I started making games on <a href="https://scratch.mit.edu/">Scratch</a></p>
                 <p>Upon seeing the game engine do what I want, I realised that being a maker was the true path for me.</p>
                 <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="https://kavallieri.github.io/the-website">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
-            </div>
-            <div class="container">
-                <a href="https://gtx-lover-69.github.io/Personal-Website/" class="home">
-                    <p>/home</p>
-                </a>
             </div>
         </div>
     </body>
