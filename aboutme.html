@@ -113,14 +113,45 @@
                 text-shadow: 0px 0px 8px white;
             }
 
+            .stickyboi {
+                box-sizing: border-box;
+                padding: 0.3em;
+                color: #fff;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                margin: 0 auto;
+                z-index: 10;
+                backdrop-filter: blur(15px);
+            }
+
+            .stickyboi a {
+                font-size: 1vw;
+                text-decoration: none;
+                color: #9cccff;
+            }
+
+            .stickyboi p {
+                font-size: 1vw;
+            }
+
             @media (max-width: 720px) {
                 body {
                     background-size: 2em 2em;
                 }
 
                 p, a {
-                    font-size: 5vw;
+                    font-size: 4vw;
 
+                }
+
+                .stickyboi a {
+                    font-size: 2vw;
+                }
+
+                .stickyboi p {
+                    font-size: 2vw;
                 }
 
             }
@@ -142,5 +173,29 @@
                 <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="https://kavallieri.github.io/">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
             </div>
         </div>
+        <div class="stickyboi">
+            <p>made with ♥ by matteo</p>
+            <p><a id="commit-link" href="#" style="color:#fff;">loading commit...</a></p>
+        </div>
+        <script>
+            async function loadLatestCommit() {
+                const owner = "gtx-lover-69";
+                const repo = "gtx-lover-69.github.io";
+                const branch = "main";
+
+                const el = document.getElementById("commit-link");
+                try {
+                    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits/${branch}`);
+                    const json = await res.json();
+                    const sha = json.sha.slice(0, 7);
+                    el.textContent = `commit ${sha}`;
+                    el.href = json.html_url;
+                } catch (err) {
+                    console.error("Commit fetch failed:", err);
+                    el.textContent = "commit unknown";
+                }
+            }
+            loadLatestCommit();
+        </script>
     </body>
 </html>
