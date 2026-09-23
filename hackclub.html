@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Me | Matteo's Site</title>
+        <title>Hack Club | Matteo's Site</title>
         <style>
             html {
                 cursor: url('assets/cursor.png'), default;
@@ -35,7 +35,7 @@
                 text-align: center;
                 font-family: 'Climate Crisis', sans-serif;
                 color: #fff;
-                font-size: 12vw;
+                font-size: 11vw;
                 letter-spacing: 0.05em;
                 line-height: 1;
                 margin: 0;
@@ -56,6 +56,11 @@
                 letter-spacing: 0.01em;
                 line-height: 1.2;
                 margin: 0;
+            }
+            
+            .title-mobile {
+                font-size: 20vw;
+                display: none;
             }
 
             .main-container {
@@ -138,17 +143,17 @@
             }
 
             @media (max-width: 720px) {
-                body {
-                    background-size: 2em 2em;
+                .title-desktop {
+                    display: none;
                 }
 
+                .title-mobile {
+                    display: block;
+                }
+                
                 p, a {
                     font-size: 4vw;
 
-                }
-
-                h1 {
-                    padding-top: 0.1em;
                 }
 
                 .stickyboi a {
@@ -158,24 +163,26 @@
                 .stickyboi p {
                     font-size: 2vw;
                 }
-
             }
-        </style>    
+
+            
+        </style>
     </head>
     <body>
-        <h1>ABOUT ME</h1>
+        <h1 class="title-desktop">HACK CLUB</h1>
+        <h1 class="title-mobile">HACK<br>CLUB</h1>
         <div class="nav">
             <a href="https://gtx-lover-69.github.io/">/home</a>
             <a href="tools.html">/tools</a>
-            <p style="color: #aa55ff;">/aboutme</p>
-            <a href="hackclub.html">/hackclub</a>
+            <a href="aboutme.html">/aboutme</a>
+            <p style="color: #ec3750;">/hackclub</p>
         </div>
         <div class="main-container">
-            <p>Hey there, I'm <b>Matteo!</b></p>
+            <p><b>Kavallieri Hack Club</b></p>
             <div class="container">
-                <p>I started coding back in 2020, when I started making games on <a href="https://scratch.mit.edu/">Scratch</a></p>
-                <p>Upon seeing the game engine do what I want, I realised that being a maker was the true path for me.</p>
-                <p>I then went on to learn Python in school and C++ this summer. I have been to 2 IRL Hack Club events and I'm the founder of <a href="https://kavallieri.github.io/">Kavallieri Hack Club</a>, Malta's first and only hack club for teens</p>
+                <p>Originally, I started the club as a personal venture. I was inspired to start <a href="https://kavallieri.github.io/">Malta's first hack club</a> after an amazing opportunity I had in the Hague.</p>
+                <p>The club's main physical location is <a href="https://www.jc.um.edu.mt">G.F. Abela Junior College</a>, but we also have a <a href="">Discord server</a> with an amazing community!</p>
+                <p>We are currently boasting 5 official members.</p>
             </div>
         </div>
         <div class="stickyboi">
