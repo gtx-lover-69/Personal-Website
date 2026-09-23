@@ -12,6 +12,7 @@
         <style>
             html {
                 cursor: url('assets/cursor.png'), default;
+                scroll-behavior: smooth;
             }
 
             body {
@@ -262,7 +263,19 @@
                 padding: 0;
             }
 
+            .title-mobile {
+                font-size: 12vw;
+                display: none;
+            }
+
             @media (max-width: 720px) {
+                .title-desktop {
+                    display: none;
+                }
+
+                .title-mobile {
+                    display: block;
+                }
 
                 .widgets p:not(.coding p) {
                     display: none;
@@ -325,7 +338,8 @@
     </head>
 
     <body>
-        <h1>MATTEO'S SITE</h1>
+        <h1 class="title-desktop">MATTEO'S SITE</h1>
+        <h1 class="title-mobile">MATTEO'S<br>SITE</h1>
         <div class="main-container">
             <div class="widgets">
                 <p style="color: #fff;">stuff</p>
