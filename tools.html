@@ -278,6 +278,37 @@
                 }
             }
             loadLatestCommit();
+
+            const body = document.body;
+
+            let targetX = 0, targetY = 0;
+            let currentX = 0, currentY = 0;
+            const lerpFactor = 0.1;
+
+            function detectMob() {
+                return ((window.innerWidth <= 720));
+            }
+
+            body.addEventListener('mousemove', (e) => {
+                const rect = body.getBoundingClientRect();
+                let isMobile = detectMob;
+                if (!isMobile()) {
+                    targetX = 0 -((e.clientX - rect.left) / rect.width);
+                    targetY = 0 -((e.clientY - rect.top) / rect.height);
+                }
+                
+            });
+
+            function animateBG() {
+                currentX += (targetX - currentX) * lerpFactor;
+                currentY += (targetY - currentY) * lerpFactor;
+
+                body.style.setProperty('--bg-x', `${currentX}%`);
+                body.style.setProperty('--bg-y', `${currentY}%`);
+                requestAnimationFrame(animateBG);
+            }
+
+            requestAnimationFrame(animateBG);
         </script>
     </body>
 </html>
